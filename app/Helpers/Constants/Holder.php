@@ -1,0 +1,22 @@
+<?php
+
+
+namespace Helpers\Constants;
+use ReflectionClass;
+
+class Holder 
+{
+    public static function getConstants(): ReflectionClass
+    {
+        return new ReflectionClass(static::class); // TODO : FWTLD
+    }
+
+    public static function values(): array
+    {
+        $values = [];
+        foreach (parent::values() as $name => $value) {
+            $values[] = $value;
+        }
+        return $values;
+    }
+}
